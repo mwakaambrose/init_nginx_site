@@ -21,7 +21,7 @@ In the sites available dir goes the the individual config files for each vhost, 
 
 #### Load all vhosts !
 ```
-	include /etc/nginx/sites-enabled/*.conf;
+include /etc/nginx/sites-enabled/*.conf;
 ```
 The hosting directory for the new site can be set by modifying the `WEB_DIR` value at the top of the script which defaults to `/var/www`
 So the new hosting directory for your domain `example.com` ends up as:
@@ -33,18 +33,18 @@ Whilst the original version of the script created a new user for each site and m
 #### How to use it:
 Simply download the tar file at the end of the this article and extract it. If your not sure how to extract a tar file either read the man pages or use the command below:
 ```
-	tar -xzf create_nginx_vhost.tar.gz
+tar -xzf create_nginx_vhost.tar.gz
 ```
 Once you have extracted the archive just run the create_nginx_site.sh script passing to it the domain name as the only parameter (you will need execute permissions), e.g.
 ```
-	./create_nginx_site.sh example.com
+./create_nginx_site.sh example.com
 ```
 And you should see an output similar to the following:
 
 ```
-	Creating hosting for: example.com
-	Reloading nginx:                                             [  OK  ]
-	Site Created for example.com
+Creating hosting for: example.com
+Reloading nginx:                                             [  OK  ]
+Site Created for example.com
 ```
 
 ### credit
