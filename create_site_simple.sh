@@ -21,7 +21,9 @@ else
 fi
 
 #Replace dots with underscores
-SITE_DIR=`echo $DOMAIN | $SED 's/\./_/g'`
+#SITE_DIR=`echo $DOMAIN | $SED 's/\./_/g'`
+#Don't replace the dots
+SITE_DIR=`echo $DOMAIN | $SED 's/\././g'`
 
 # Now we need to copy the virtual host template
 CONFIG=$NGINX_CONFIG/$DOMAIN.conf
@@ -43,6 +45,6 @@ sudo /etc/init.d/nginx reload
 # put the template index.html file into the new domains web dir
 sudo cp $CURRENT_DIR/index.html.template $WEB_DIR/$SITE_DIR/index.html
 sudo $SED -i "s/SITE/$DOMAIN/g" $WEB_DIR/$SITE_DIR/index.html
-sudo chown nginx:nginx $WEB_DIR/$SITE_DIR/index.html
+sudo chown www-data:www-data $WEB_DIR/$SITE_DIR/index.html
 
-echo "Site Created for $DOMAIN"
+echo "Site Installed for $DOMAIN"
