@@ -33,7 +33,7 @@ sudo $SED -i "s!ROOT!$WEB_DIR/$SITE_DIR!g" $CONFIG
 
 # set up web root
 sudo mkdir $WEB_DIR/$SITE_DIR
-sudo chown nginx:nginx -R $WEB_DIR/$SITE_DIR
+sudo chown www-data:www-data -R $WEB_DIR/$SITE_DIR
 sudo chmod 600 $CONFIG
 
 # create symlink to enable site
